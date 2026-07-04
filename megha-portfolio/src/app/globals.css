@@ -1,0 +1,56 @@
+/* Font import MUST be first */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap");
+@import "tailwindcss";
+
+/* shadcn styles */
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-ink: #f5f5f3;
+  --color-stone: #9a9a97;
+  --color-hairline: #262626;
+  --color-chip: #1c1c1c;
+
+  /* Fonts */
+  --font-display: var(--font-pt-serif);
+  --font-body: "Satoshi", sans-serif;
+  --font-mono: var(--font-jetbrains);
+
+  --max-width-content: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
