@@ -32,28 +32,31 @@ export default function Header() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-5 lg:px-12">
-        <a href="#hero" className="focus-ring flex items-center gap-2 font-display text-lg">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-ink text-bg">
-            <span className="h-2.5 w-2.5 rounded-sm bg-bg" />
+      <div className="mx-auto flex max-w-content items-center justify-between px-5 py-5 sm:px-8 lg:px-12">
+        <a href="#hero" className="focus-ring flex items-center gap-2.5 font-display text-lg text-ink">
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg border border-hairline bg-chip">
+            <span className="h-2 w-2 rounded-sm bg-[var(--color-accent)]" />
           </span>
           {profile.name}
         </a>
-        <nav className="hidden items-center gap-8 md:flex">
+
+        <nav className="hidden items-center gap-1 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="focus-ring text-sm text-stone transition-colors hover:text-ink"
+              className="focus-ring rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-stone transition-colors duration-200 hover:text-ink"
             >
               {link.label}
             </a>
           ))}
         </nav>
+
         <a
           href={`mailto:${profile.email}`}
-          className="focus-ring rounded-full bg-chip px-5 py-2.5 text-sm text-ink transition-colors hover:bg-ink hover:text-bg"
+          className="focus-ring inline-flex items-center gap-2 rounded-full border border-hairline bg-chip px-5 py-2.5 font-mono text-[10px] uppercase tracking-wider text-ink transition-colors duration-200 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
         >
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
           Get in Touch
         </a>
       </div>

@@ -9,28 +9,26 @@
 
 @theme {
   --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-ink: #f5f5f3;
-  --color-stone: #9a9a97;
-  --color-hairline: #262626;
-  --color-chip: #1c1c1c;
+  --color-surface: #1a1815;       /* bigger jump from bg */
+  --color-surface-hover: #221f1a;
+  --color-ink: #f5f4f0;
+  --color-stone: #948d80;
+  --color-hairline: #33302a;      /* more visible line */
+  --color-chip: #1e1c17;
+  --color-accent: #c9a876;
 
-  /* Fonts */
   --font-display: var(--font-pt-serif);
   --font-body: "Satoshi", sans-serif;
   --font-mono: var(--font-jetbrains);
-
   --max-width-content: 1200px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  font-family: var(--font-body);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(201,168,118,0.04), transparent 45%),
+    radial-gradient(circle at 80% 100%, rgba(255,255,255,0.02), transparent 40%),
+    var(--color-bg);
+  background-attachment: fixed;
 }
 
 ::selection {

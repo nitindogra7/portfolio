@@ -7,22 +7,24 @@ import ProjectCard from "./ProjectCard";
 export default function Work() {
   return (
     <section id="work" className="border-t border-hairline">
-      <div className="mx-auto max-w-content px-6 py-20 lg:px-12 lg:py-32">
+      <div className="mx-auto max-w-content px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4 pb-14"
+          className="flex flex-col gap-3 pb-10 sm:pb-12 lg:pb-16"
         >
-          <span className="text-sm text-stone">Recent Work</span>
+          <span className="font-mono text-[10px] uppercase tracking-wider text-stone/60">
+            Recent work
+          </span>
 
-          <h2 className="max-w-xl font-display text-4xl font-medium leading-tight text-ink lg:text-5xl">
+          <h2 className="max-w-xl font-display text-3xl font-medium leading-tight text-ink sm:text-4xl lg:text-5xl">
             Selected projects
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap gap-1">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {projects.map((project, i) => (
             <motion.div
               key={project.slug}
@@ -30,7 +32,6 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="w-full sm:w-[calc(50%-2px)] lg:w-[calc(33.333%-3px)]"
             >
               <ProjectCard project={project} />
             </motion.div>
