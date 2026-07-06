@@ -3,6 +3,12 @@
 import { motion } from "framer-motion";
 import { projects } from "@/data/content";
 import ProjectCard from "./ProjectCard";
+import image1 from "../assets/image1.jpg";
+import image2 from "../assets/image2.jpg";
+import image3 from "../assets/image3.gif";
+import image4 from "../assets/image4.gif";
+
+const coverImages = [image1, image2, image3, image4];
 
 export default function Work() {
   return (
@@ -33,7 +39,10 @@ export default function Work() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard
+                project={project}
+                cover={coverImages[i % coverImages.length]}
+              />
             </motion.div>
           ))}
         </div>

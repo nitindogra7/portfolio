@@ -8,22 +8,27 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import IndexRail from "@/components/IndexRail";
 import AboutStrip from "@/components/aboutStrip";
+import LenisProvider from "@/components/LenisProvider";
+import FloatingContact from "../components/FloatingContact";
 
 export default function Home() {
   return (
     <>
-      <IndexRail />
-      <Header />
-      <main>
-        <Hero />
-        <AboutStrip />
-        <Work />
-        <Process />
-        <Services />
-        <Testimonials />
-        <Faq />
-      </main>
-      <Footer />
+      <LenisProvider>
+        <IndexRail />
+        <Header />
+        <main>
+          <Hero />
+          <AboutStrip />
+          <Work />
+          <Process />
+          <Services />
+          <Testimonials />
+          <Faq />
+        </main>
+        <Footer />
+        <FloatingContact />
+      </LenisProvider>
     </>
   );
 }

@@ -16,9 +16,9 @@ export default function Testimonials() {
   return (
     <section
       id="say"
-      className="relative w-full border-t border-hairline px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+      className="relative w-full px-5 py-14 sm:px-8 sm:py-20 lg:border-t lg:border-hairline lg:px-12 lg:py-28"
     >
-      <div className="mx-auto flex w-full max-w-content flex-col gap-10 lg:gap-14">
+      <div className="mx-auto flex w-full max-w-content flex-col gap-8 lg:gap-14">
         {/* Header block — matches Hero/Process/Services badge + heading rhythm */}
         <div className="flex flex-col gap-5 lg:gap-6">
           <motion.div
@@ -88,26 +88,7 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Stats row — same border-hairline divider + font-display scale as headings */}
-        <div className="grid grid-cols-1 gap-10 border-t border-hairline pt-14 sm:grid-cols-3">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              custom={i + 2 + testimonials.length}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={fadeUp}
-            >
-              <p className="font-display text-4xl font-medium tracking-tighter text-ink lg:text-5xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-stone">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        
       </div>
     </section>
   );

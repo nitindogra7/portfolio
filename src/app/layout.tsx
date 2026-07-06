@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, PT_Serif } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import LenisProvider from "@/components/LenisProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,15 +38,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        inter.variable,
-        ptSerif.variable,
-        jetBrainsMono.variable
-      )}
+      className={cn(inter.variable, ptSerif.variable, jetBrainsMono.variable)}
     >
-      <body className="bg-bg font-body antialiased text-ink">
-        <LenisProvider>{children}</LenisProvider>
-      </body>
+      <body className="bg-bg font-body antialiased text-ink">{children}</body>
     </html>
   );
 }

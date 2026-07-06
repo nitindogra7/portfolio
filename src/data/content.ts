@@ -60,7 +60,7 @@ export const projects: Project[] = [
     cover:
       "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1200&auto=format&fit=crop",
     description:
-      "A warm, hand-drawn identity for a modern chai brand — packaging, signage and social templates.",
+      "A warm, hand-drawn identity for a modern chai brand — packaging signage and social templates.",
   },
   {
     slug: "kaaghaz-paper-co",
@@ -108,7 +108,7 @@ export const process = [
   {
     number: "01",
     title: "Understand the brief",
-    body: "A short call to learn your audience, goals and the story your brand needs to tell.",
+    body: "A quick discovery call to understand your audience, goals, and the story your brand is meant to tell.",
   },
   {
     number: "02",

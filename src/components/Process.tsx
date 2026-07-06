@@ -16,9 +16,9 @@ export default function Process() {
   return (
     <section
       id="process"
-      className="relative w-full border-t border-hairline px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+      className="relative w-full px-5 py-14 sm:px-8 sm:py-20 lg:border-t lg:border-hairline lg:px-12 lg:py-28"
     >
-      <div className="mx-auto flex w-full max-w-content flex-col gap-10 lg:gap-14">
+      <div className="mx-auto flex w-full max-w-content flex-col gap-8 lg:gap-16">
         {/* Header block — mirrors Hero's badge + heading + subtext rhythm */}
         <div className="flex flex-col gap-5 lg:gap-6">
           <motion.div
@@ -47,8 +47,8 @@ export default function Process() {
           </motion.h2>
         </div>
 
-        {/* Steps grid — same border-hairline + font-mono numbering as Hero's accents */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-8">
+        {/* Steps — numbered nodes on a connecting thread, since order is real information here */}
+        <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {process.map((step, i) => (
             <motion.div
               key={step.number}
@@ -57,19 +57,29 @@ export default function Process() {
               whileInView="show"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}
-              className="relative flex flex-col gap-4 border-t border-hairline pt-6"
+              className="flex flex-col gap-5"
             >
-              <div className="pointer-events-none absolute left-0 top-0 h-3.5 w-3.5 border-l border-t border-[var(--color-accent)]/25" />
+              {/* Node + connecting line row */}
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-hairline bg-surface font-mono text-sm text-[var(--color-accent)] shadow-[0_1px_0_0_rgba(255,255,255,0.5)_inset,0_8px_16px_-12px_rgba(0,0,0,0.15)]">
+                  {step.number}
+                </span>
+                <div
+                  aria-hidden="true"
+                  className={`h-px flex-1 bg-hairline ${
+                    i === process.length - 1 ? "lg:hidden" : ""
+                  }`}
+                />
+              </div>
 
-              <span className="rounded-full border border-hairline bg-chip px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-[var(--color-accent)] w-fit">
-                {step.number}
-              </span>
-              <h3 className="font-display text-2xl font-medium leading-tight text-ink lg:text-[1.85rem]">
-                {step.title}
-              </h3>
-              <p className="max-w-sm text-sm leading-relaxed text-stone lg:text-base">
-                {step.body}
-              </p>
+              <div className="flex flex-col gap-3 rounded-2xl border border-hairline bg-surface p-6 shadow-[0_1px_0_0_rgba(255,255,255,0.5)_inset,0_16px_32px_-24px_rgba(0,0,0,0.12)] transition-colors duration-300 hover:border-[var(--color-accent)]/30">
+                <h3 className="font-display text-2xl font-medium leading-tight text-ink lg:text-[1.6rem]">
+                  {step.title}
+                </h3>
+                <p className="max-w-sm text-sm leading-relaxed text-stone lg:text-[0.95rem]">
+                  {step.body}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

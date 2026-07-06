@@ -26,7 +26,7 @@ export default function AboutStrip() {
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={fadeUp}
-          className="flex flex-col gap-3"
+          className="flex flex-col gap-4"
         >
           <span className="font-mono text-[10px] uppercase tracking-wider text-stone/60">
             Skills
@@ -43,7 +43,7 @@ export default function AboutStrip() {
           </div>
         </motion.div>
 
-        {/* Experience — quiet, right column */}
+        {/* Experience — consistent cards at every breakpoint */}
         <motion.div
           custom={1}
           initial="hidden"
@@ -55,11 +55,11 @@ export default function AboutStrip() {
           <span className="mb-3 font-mono text-[10px] uppercase tracking-wider text-stone/60">
             Experience
           </span>
-          <div className="flex flex-col border-t border-hairline">
+          <div className="flex flex-col gap-2.5">
             {experience.map((item, i) => (
               <div
                 key={item.role + item.place}
-                className="group grid grid-cols-[1.5rem_1fr_1fr_auto] items-baseline gap-3 border-b border-hairline py-3 transition-colors duration-200 hover:bg-[var(--color-surface-hover)]"
+                className="group grid grid-cols-[1.5rem_1fr_auto] items-baseline gap-x-3 gap-y-1 rounded-xl border border-hairline bg-surface px-4 py-3.5 transition-colors duration-200 hover:border-[var(--color-accent)]/30 sm:grid-cols-[1.5rem_1fr_1fr_auto]"
               >
                 <span className="font-mono text-[10px] text-stone/50">
                   {String(i + 1).padStart(2, "0")}
@@ -70,7 +70,7 @@ export default function AboutStrip() {
                 <p className="truncate text-xs text-stone sm:text-sm">
                   {item.place}
                 </p>
-                <span className="whitespace-nowrap text-right font-mono text-[10px] tabular-nums text-stone/60">
+                <span className="col-span-3 whitespace-nowrap font-mono text-[10px] tabular-nums text-stone/60 sm:col-span-1 sm:text-right">
                   {item.period}
                 </span>
               </div>

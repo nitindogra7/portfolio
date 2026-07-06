@@ -2,9 +2,16 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import type { StaticImageData } from "next/image";
 import type { Project } from "@/data/content";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  cover,
+}: {
+  project: Project;
+  cover: StaticImageData;
+}) {
   return (
     <motion.a
       href="#work"
@@ -15,11 +22,11 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className="relative h-[420px] w-full overflow-hidden">
         <Image
-          src={project.cover}
+          src={cover}
           alt={project.title}
           fill
           sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 33vw"
-          className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
       </div>
     </motion.a>

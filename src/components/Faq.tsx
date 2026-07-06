@@ -19,9 +19,9 @@ export default function Faq() {
   return (
     <section
       id="faq"
-      className="relative w-full border-t border-hairline px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28"
+      className="relative w-full px-5 py-14 sm:px-8 sm:py-20 lg:border-t lg:border-hairline lg:px-12 lg:py-28"
     >
-      <div className="mx-auto flex w-full max-w-content flex-col gap-10 lg:gap-14">
+      <div className="mx-auto flex w-full max-w-content flex-col gap-8 lg:gap-14">
         {/* Header block — matches Hero/Process/Services/Testimonials rhythm */}
         <div className="flex flex-col gap-5 lg:gap-6">
           <motion.div
@@ -50,8 +50,8 @@ export default function Faq() {
           </motion.h2>
         </div>
 
-        {/* Accordion — refined disclosure with accent state, no numbering (not a sequence) */}
-        <div className="flex flex-col divide-y divide-hairline border-t border-hairline">
+        {/* Accordion — cards on all breakpoints */}
+        <div className="flex flex-col gap-3 sm:gap-3 lg:gap-4">
           {faqs.map((item, index) => {
             const isOpen = openIndex === index;
             return (
@@ -62,14 +62,15 @@ export default function Faq() {
                 whileInView="show"
                 viewport={{ once: true, margin: "-60px" }}
                 variants={fadeUp}
+                className="overflow-hidden rounded-2xl border border-hairline bg-surface transition-colors duration-300 hover:border-[var(--color-accent)]/25"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="focus-ring group flex w-full items-center justify-between gap-6 py-6 text-left"
+                  className="focus-ring group flex w-full items-center justify-between gap-6 px-5 py-5 text-left sm:px-6 lg:px-8 lg:py-6"
                   aria-expanded={isOpen}
                 >
                   <span
-                    className={`font-display text-lg font-medium leading-snug transition-colors duration-300 sm:text-xl ${
+                    className={`font-sans text-sm font-medium leading-snug transition-colors duration-300 sm:text-xl ${
                       isOpen ? "text-[var(--color-accent)]" : "text-ink"
                     }`}
                   >
@@ -103,7 +104,7 @@ export default function Faq() {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="max-w-2xl pb-6 text-sm leading-relaxed text-stone lg:text-base">
+                      <p className="max-w-2xl px-5 pb-5 text-sm leading-relaxed text-stone sm:px-6 lg:px-8 lg:pb-6 lg:text-base">
                         {item.a}
                       </p>
                     </motion.div>

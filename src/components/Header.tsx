@@ -40,25 +40,31 @@ export default function Header() {
           {profile.name}
         </a>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-1 rounded-full border border-transparent px-1 py-1 transition-colors duration-300 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="focus-ring rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-stone transition-colors duration-200 hover:text-ink"
+              className="focus-ring rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-stone transition-colors duration-200 hover:bg-chip hover:text-ink"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <a
+        <motion.a
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
           href={`mailto:${profile.email}`}
-          className="focus-ring inline-flex items-center gap-2 rounded-full border border-hairline bg-chip px-5 py-2.5 font-mono text-[10px] uppercase tracking-wider text-ink transition-colors duration-200 hover:border-[var(--color-accent)]/40 hover:text-[var(--color-accent)]"
+          className="focus-ring group relative inline-flex items-center gap-2 overflow-hidden rounded-full border border-hairline bg-chip px-5 py-2.5 font-mono text-[10px] uppercase tracking-wider text-ink transition-colors duration-200 hover:border-[var(--color-accent)]/50 hover:text-[var(--color-accent)]"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
-          Get in Touch
-        </a>
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-accent)] opacity-75" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
+          </span>
+          <span className="hidden sm:inline">Get in Touch</span>
+          <span className="sm:hidden">Contact</span>
+        </motion.a>
       </div>
     </motion.header>
   );
