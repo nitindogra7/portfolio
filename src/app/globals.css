@@ -52,3 +52,37 @@ body {
   outline: 2px solid var(--color-ink);
   outline-offset: 3px;
 }
+
+/* Dark slim scrollbar — Calendly popup outer container */
+.calendly-popup-content,
+.calendly-overlay,
+.calendly-overlay *,
+[class*="calendly-"] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-hairline) transparent;
+}
+
+.calendly-popup-content::-webkit-scrollbar,
+.calendly-overlay::-webkit-scrollbar,
+.calendly-overlay *::-webkit-scrollbar {
+  width: 6px;
+}
+
+.calendly-popup-content::-webkit-scrollbar-track,
+.calendly-overlay::-webkit-scrollbar-track,
+.calendly-overlay *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.calendly-popup-content::-webkit-scrollbar-thumb,
+.calendly-overlay::-webkit-scrollbar-thumb,
+.calendly-overlay *::-webkit-scrollbar-thumb {
+  background: var(--color-hairline);
+  border-radius: 999px;
+}
+
+.calendly-popup-content::-webkit-scrollbar-thumb:hover,
+.calendly-overlay::-webkit-scrollbar-thumb:hover,
+.calendly-overlay *::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}

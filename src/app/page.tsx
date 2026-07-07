@@ -9,7 +9,6 @@ import Footer from "@/components/Footer";
 import IndexRail from "@/components/IndexRail";
 import AboutStrip from "@/components/aboutStrip";
 import LenisProvider from "@/components/LenisProvider";
-import FloatingContact from "../components/FloatingContact";
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
           <Faq />
         </main>
         <Footer />
-        <FloatingContact />
       </LenisProvider>
     </>
   );

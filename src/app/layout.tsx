@@ -25,7 +25,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Megha — Graphic Designer, Delhi",
+  title: "Megha - Graphic Designer",
   description:
     "Megha is a graphic designer based in Delhi specialising in brand identity, packaging and editorial design.",
 };
